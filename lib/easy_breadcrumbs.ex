@@ -2,12 +2,6 @@ defmodule EasyBreadcrumbs do
   import Inflex
 
   ### Start Public API
-  def helper do
-    url = conn.request_path
-    breadcrumbs(url)
-  end
-
-  # This is for testing
   def breadcrumbs(url) do
     build_html(url)
   end
