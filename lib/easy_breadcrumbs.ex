@@ -9,7 +9,8 @@ defmodule EasyBreadcrumbs do
 
   ### Private methods
   defp build_html(url) do
-    formatted_path = set_missing_values(url)
+    path = get_relative_path(url)
+    formatted_path = set_missing_values(path)
     items = list_items(formatted_path)
     "<ul class='breadcrumb'>" <> items <> "</ul>"
   end
@@ -80,10 +81,10 @@ defmodule EasyBreadcrumbs do
     Enum.find_index(list, fn x -> x == item end)
   end
 
-  # defp get_relative_path(url) do
-  #   split = String.split(url, "/")
-  #   Enum.slice(split, 3, Enum.count(split) - 1)
-  # end
+  defp get_relative_path(url) do
+    split = String.split(url, "/")
+    Enum.slice(split, 3, Enum.count(split) - 1)
+  end
 
   defp is_not_number?(string) do
     !Regex.match?(~r/[0-9]/, string)
