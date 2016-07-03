@@ -1,9 +1,8 @@
 defmodule EasyBreadcrumbs do
-  import Inflex
 
   ### Start Public API
   def breadcrumbs(url) do
-    HtmlSanitizeEx.strip_tags(url)
+    sanitize(url)
     |> build_html
   end
   ### End Public API
@@ -99,9 +98,13 @@ defmodule EasyBreadcrumbs do
     rem(Enum.count(list), 2) != 0 
   end
 
-  # defp sanitize(url) do
-  #   ActionController::Base.helpers.sanitize(url)
-  # end
+  defp sanitize(url) do
+    HtmlSanitizeEx.strip_tags(url)
+  end
+
+  defp singularize(string) do
+    Inflex.singularize(string)
+  end
 
   defp to_keyword_list(list) do
     key_list = List.delete_at(list, 0)
