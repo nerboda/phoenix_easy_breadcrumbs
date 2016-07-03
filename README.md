@@ -17,10 +17,14 @@ A super easy way to add bootstrap breadcrumbs to every page of your app.
         end
   3. Add the following function to your layout view:
 
+        require EasyBreadcrumbs
+        
         def easy_breadcrumbs(conn) do
-          YourApp.Router.Helpers.url(conn) <> conn.request_path
-          |> EasyBreadcrumbs.breadcrumbs
-          |> raw
+          if conn do
+            YourApp.Router.Helpers.url(conn) <> conn.request_path
+            |> EasyBreadcrumbs.breadcrumbs
+            |> raw
+          end
         end
 
   Make sure you change the `YourApp` to the name of your app.
