@@ -30,7 +30,10 @@ defmodule EasyBreadcrumbs.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [{ :inflex, "~> 1.7.0" }]
+    [
+      { :inflex, "~> 1.7.0" },
+      {:html_sanitize_ex, "~> 1.0.0"}
+    ]
   end
 
   defp package do

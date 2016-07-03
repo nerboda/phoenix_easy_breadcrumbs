@@ -1,1 +1,3 @@
-%{"inflex": {:hex, :inflex, "1.7.0", "4466a34b7d8e871d8164619ba0f3b8410ec782e900f0ae1d3d27a5875a29532e", [:mix], []}}
+%{"html_sanitize_ex": {:hex, :html_sanitize_ex, "1.0.0", "d10dd14ae9e25fdf6c091ba8da90ba7bcad2650f2dae1b0ebfad64142f715803", [:mix], [{:mochiweb, "~> 2.12.2", [hex: :mochiweb, optional: false]}]},
+  "inflex": {:hex, :inflex, "1.7.0", "4466a34b7d8e871d8164619ba0f3b8410ec782e900f0ae1d3d27a5875a29532e", [:mix], []},
+  "mochiweb": {:hex, :mochiweb, "2.12.2", "80804ad342afa3d7f3524040d4eed66ce74b17a555de454ac85b07c479928e46", [:make, :rebar], []}}

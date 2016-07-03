@@ -3,7 +3,8 @@ defmodule EasyBreadcrumbs do
 
   ### Start Public API
   def breadcrumbs(url) do
-    build_html(url)
+    HtmlSanitizeEx.strip_tags(url)
+    |> build_html
   end
   ### End Public API
 

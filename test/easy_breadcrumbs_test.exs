@@ -17,6 +17,17 @@ defmodule EasyBreadcrumbsTest do
     assert string == expected_output
   end
 
+  test "breadcrumbs/1 sanitizes url to protect against xss attacks" do
+    string = "http://website.com/contact/<script>alert(1)</script>"
+    |> EasyBreadcrumbs.breadcrumbs
+
+    expected_output = "<ul class='breadcrumb'>" <>
+    "<li><a href='/'>Home</a></li>" <>
+    "<li class='active'>Contact</li></ul>"
+
+    assert string == expected_output
+  end
+
   ### Below are tests for private functions in EasyBreadcrumbs module
   ### All tests were passing prior to making functions private.
 
