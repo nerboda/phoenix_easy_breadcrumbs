@@ -26,7 +26,8 @@ defmodule EasyBreadcrumbs do
     items_list = Enum.map(directories, fn item ->
       current_index = index(directories, item)
       if item == List.last(directories) do
-        Enum.at(names, current_index) |> active_item
+        Enum.at(names, current_index)
+        |> active_item
       else
         Enum.slice(directories, 1, current_index)
         |> link_item(Enum.at(names, current_index))

@@ -15,9 +15,7 @@ A super easy way to add bootstrap breadcrumbs to every page of your app.
         def application do
           [applications: [:easy_breadcrumbs]]
         end
-  3. Add the following to your layout view:
-
-        require EasyBreadcrumbs
+  3. Add the following function to your layout view:
 
         def easy_breadcrumbs(conn) do
           if conn do
